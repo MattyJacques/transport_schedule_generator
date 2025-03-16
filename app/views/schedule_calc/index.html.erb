@@ -1,0 +1,20 @@
+<div id='schedule_calc' class='container row'>
+  <div id='schedule_form' class='col col-lg-2'>
+    <%= form_with(url: '/',
+                  method: :get) do |form| %>
+      <%= form.label :departure %>
+      <%= form.time_field :departure,
+                          value: @departure,
+                          class: 'col form-control form-control-dark text-bg-dark mb-2' %>
+      <%= form.label :arrival, class: 'col form-control form-control-dark text-bg-dark' %>
+      <%= form.time_field :arrival,
+                          value: @arrival,
+                          class: 'col form-control form-control-dark text-bg-dark mb-2' %>
+      <%= form.label :number_of_vehicles, class: 'col form-control form-control-dark text-bg-dark' %>
+      <%= form.number_field :num_of_vehicles,
+                          value: @num_of_vehicles,
+                          class: 'col form-control form-control-dark text-bg-dark mb-2' %>
+      <%= form.submit "Calculate", class: 'col form-control form-control-dark text-bg-dark mb-2' %>
+    <% end %>
+  </div>
+</div>
