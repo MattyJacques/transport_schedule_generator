@@ -1,0 +1,48 @@
+plugins:
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+
+AllCops:
+  NewCops: enable
+
+Metrics/AbcSize:
+  CountRepeatedAttributes: false
+  Exclude:
+    - 'db/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'db/**/*'
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
