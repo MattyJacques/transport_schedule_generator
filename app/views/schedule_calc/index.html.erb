@@ -1,20 +1,26 @@
-<div id='schedule_calc' class='container row'>
-  <div id='schedule_form' class='col col-lg-2'>
+<div id='schedule_calc' class='container row my-auto'>
+  <div id='schedule_form' class='col col-lg-2 my-auto'>
     <%= form_with(url: '/',
                   method: :get) do |form| %>
       <%= form.label :departure %>
       <%= form.time_field :departure,
                           value: @departure,
                           class: 'col form-control form-control-dark text-bg-dark mb-2' %>
-      <%= form.label :arrival, class: 'col form-control form-control-dark text-bg-dark' %>
+      <%= form.label :arrival %>
       <%= form.time_field :arrival,
                           value: @arrival,
                           class: 'col form-control form-control-dark text-bg-dark mb-2' %>
-      <%= form.label :number_of_vehicles, class: 'col form-control form-control-dark text-bg-dark' %>
-      <%= form.number_field :num_of_vehicles,
+      <%= form.label :number_of_vehicles %>
+      <%= form.number_field :vehicles,
                           value: @num_of_vehicles,
                           class: 'col form-control form-control-dark text-bg-dark mb-2' %>
       <%= form.submit "Calculate", class: 'col form-control form-control-dark text-bg-dark mb-2' %>
+    <% end %>
+  </div>
+  <div id='schedule_results' class='col col-lg my-auto'>
+    <% if @every_length.present? && @num_of_times.present? %>
+      <p>Every <%= @every_length.to_i %> minutes</p>
+      <p><%= @num_of_times.to_i %> times</p>
     <% end %>
   </div>
 </div>
