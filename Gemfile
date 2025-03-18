@@ -45,6 +45,9 @@ group :development, :test do
 end
 
 group :development do
+  # Generate dockerfile for app
+  gem 'dockerfile-rails'
+
   # Static analysis for Ruby code style
   gem 'rubocop', require: false
   gem 'rubocop-factory_bot', require: false
@@ -67,3 +70,5 @@ group :test do
   # Add should matchers to testing framework
   gem 'shoulda-matchers'
 end
+
+gem "litestream", "~> 0.12.0"
